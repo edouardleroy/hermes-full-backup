@@ -17,9 +17,7 @@ Si `$HERMES_HOME` no está definida, el script usa el default según `sys.platfo
 ```json
 {
     "hermes_home": "C:\\Users\\alice\\AppData\\Local\\hermes",
-    "hermes_source": "C:\\Users\\alice\\AppData\\Local\\hermes\\hermes-agent",
-    "restorer_exe": "C:\\Users\\alice\\Desktop\\hermes-restore.exe",
-    "restorer_py": "C:\\Users\\alice\\Desktop\\hermes_restore.py"
+    "hermes_source": "C:\\Users\\alice\\AppData\\Local\\hermes\\hermes-agent"
 }
 ```
 
@@ -29,8 +27,6 @@ Si `$HERMES_HOME` no está definida, el script usa el default según `sys.platfo
 |-------|------|-------------|---------|
 | `hermes_home` | string (path) | Directorio de Hermes | Auto-detectado |
 | `hermes_source` | string (path) | Código fuente de Hermes | `{hermes_home}/hermes-agent` |
-| `restorer_exe` | string (path) | Restaurador standalone .exe | `~/Desktop/hermes-restore.exe` |
-| `restorer_py` | string (path) | Restaurador Python | `~/Desktop/hermes_restore.py` |
 
 ### Uso
 
@@ -111,8 +107,6 @@ Estos archivos se buscan en la raíz de `$HERMES_HOME`:
 | `$HERMES_HOME/bin/uv.exe` | Gestor de paquetes uv |
 | `$HERMES_HOME/bin/uvw.exe` | uv wrapper Windows |
 | `$HERMES_HOME/bin/uvx.exe` | uvx para ejecutar herramientas |
-| `~/Desktop/hermes-restore.exe` | Restaurador standalone (para clean OS) |
-| `~/Desktop/hermes_restore.py` | Restaurador Python (alternativa) |
 
 ### Installer
 
@@ -120,4 +114,3 @@ Estos archivos se buscan en la raíz de `$HERMES_HOME`:
 |------|-----------|
 | `junto al script/install.bat` | Instalador one-click para Windows |
 | `../install.bat` | Relativo al directorio del script |
-| `~/Desktop/hermes-restore-app/src/install.bat` | Ruta alternativa |

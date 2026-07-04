@@ -73,8 +73,6 @@ backup.zip
 │   ├── uv.exe               ← Gestor de paquetes
 │   ├── uvw.exe
 │   ├── uvx.exe
-├── hermes-restore.exe       ← Restaurador standalone
-├── hermes_restore.py        ← Restaurador Python (alternativa)
 ├── install.bat              ← Instalador one-click (Windows)
 └── LEEME.txt                ← Instrucciones dentro del ZIP
 ```
@@ -130,9 +128,7 @@ Esto reduce el backup de ~150 MB a ~60 MB.
 ```json
 {
     "hermes_home": "/custom/path/hermes",
-    "hermes_source": "/custom/path/hermes-agent",
-    "restorer_exe": "/tools/hermes-restore.exe",
-    "restorer_py": "/tools/hermes_restore.py"
+    "hermes_source": "/custom/path/hermes-agent"
 }
 ```
 

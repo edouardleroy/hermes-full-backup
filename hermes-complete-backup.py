@@ -29,14 +29,11 @@ _DEFAULT_HOME = (
 HERMES_HOME = Path(os.environ.get("HERMES_HOME", str(_DEFAULT_HOME)))
 HERMES_SOURCE = HERMES_HOME / "hermes-agent"
 BACKUP_DIR_DEFAULT = Path.home() / "hermes-backups"
-RESTORER_EXE = Path.home() / "Desktop" / "hermes-restore.exe"
-RESTORER_PY = Path.home() / "Desktop" / "hermes_restore.py"
 INSTALL_BAT = next(
     (
         c for c in [
             Path(__file__).resolve().parent / "install.bat",
             Path(__file__).resolve().parent.parent / "install.bat",
-            Path.home() / "Desktop" / "hermes-restore-app" / "src" / "install.bat",
         ] if c.exists()
     ), None
 )
@@ -128,8 +125,6 @@ def create_backup(output_path, quick=False):
         for b in ("uv.exe", "uvw.exe", "uvx.exe"):
             p = HERMES_HOME / "bin" / b
             if p.exists(): zf.write(str(p), f"bin/{b}"); n += 1
-        if RESTORER_EXE.exists(): zf.write(str(RESTORER_EXE), "hermes-restore.exe"); n += 1
-        if RESTORER_PY.exists(): zf.write(str(RESTORER_PY), "hermes_restore.py"); n += 1
         total += n; cprint(C.GREEN, f"    OK  {n} binaries")
         # 5 - Installer
         cprint(C.BOLD, "\n4/5  Install script...")
@@ -163,12 +158,10 @@ CONTENTS:
   plugins/          — Installed plugins
   hermes-agent/     — Source code (reinstall on clean OS)
   bin/uv.exe        — Package manager
-  hermes-restore.exe — Standalone restore tool
   install.bat       — One-click installer (Windows)
 
 RESTORE:
   hermes import <backup.zip>
-  hermes-restore.exe backup.zip
   Extract + run install.bat (clean Windows)
 
 WARNING: Contains API keys from .env/auth.json.
@@ -185,7 +178,7 @@ def main():
         cfg = json.load(open(args.json_config))
         for k, v in cfg.items():
             g = globals()
-            if k.upper() in g: g[k.upper()] = Path(v)
+            if k.upper() in g and k.upper() != "INSTALL_BAT": g[k.upper()] = Path(v)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = args.output or str(BACKUP_DIR_DEFAULT / f"hermes-full-{ts}.zip")
     print(f"  Output: {out}  Hermes home: {HERMES_HOME}")

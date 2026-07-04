@@ -15,7 +15,7 @@ El script genera un archivo `.zip` con todo lo necesario para restaurar Hermes d
 - Configuración (`config.yaml`, `.env`, `state.db`, `auth.json`)
 - Skills, cron jobs, memorias, perfiles
 - Código fuente de Hermes Agent
-- Binarios (`uv.exe`, `hermes-restore.exe`)
+- Binarios (`uv.exe`)
 - Script de instalación (`install.bat`)
 - Instrucciones de recuperación
 

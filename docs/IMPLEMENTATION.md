@@ -156,7 +156,6 @@ Edita estas secciones si tu instalación es atípica:
 | `_DEFAULT_HOME` | Al inicio del script | Si tu Hermes vive en otra ruta |
 | `ESSENTIAL_FILES` | Config | Si agregaste/quitaste archivos en `$HERMES_HOME` |
 | `EXCLUDE_SOURCE_DIRS` | Config | Si tu source code tiene directorios grandes extra |
-| `RESTORER_EXE` / `RESTORER_PY` | Config | Si el restaurador está en otra ruta |
 | `INSTALL_BAT_CANDIDATES` | Config | Si tu install.bat está en otro lado |
 
 Para cambios temporales, usa `--json-config`:
