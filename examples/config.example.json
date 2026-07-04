@@ -1,0 +1,7 @@
+{
+    "$$README": "Copia este archivo, edita las rutas, y pásalo con --json-config",
+    "hermes_home": "C:\\Users\\tu-usuario\\AppData\\Local\\hermes",
+    "hermes_source": "C:\\Users\\tu-usuario\\AppData\\Local\\hermes\\hermes-agent",
+    "restorer_exe": "C:\\Users\\tu-usuario\\Desktop\\hermes-restore.exe",
+    "restorer_py": "C:\\Users\\tu-usuario\\Desktop\\hermes_restore.py"
+}
